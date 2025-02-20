@@ -741,18 +741,6 @@ extension IterableMapNotNull<E> on Iterable<E> {
   }
 }
 
-extension IterableMapIndexed<E> on Iterable<E> {
-  /// Returns a new lazy [Iterable] containing the results of applying the
-  /// given [transform] function to each element and its index in the original
-  /// collection.
-  Iterable<R> mapIndexed<R>(R Function(int index, E) transform) sync* {
-    var index = 0;
-    for (final element in this) {
-      yield transform(index++, element);
-    }
-  }
-}
-
 extension IterableMapIndexedNotNull<E> on Iterable<E> {
   /// Returns a new lazy [Iterable] containing only the non-null results of
   /// applying the given [transform] function to each element and its index

@@ -507,19 +507,6 @@ void main() {
       );
     });
 
-    test('.mapIndexed()', () {
-      expect([].mapIndexed((index, it) => 1), []);
-      expect(
-        [1, 2, 3, 4].mapIndexed((index, it) => null),
-        [null, null, null, null],
-      );
-      expect([5, 4, null, 2].mapIndexed((index, it) => index), [0, 1, 2, 3]);
-      expect(
-        [1, 2, 3, 4].mapIndexed((index, it) => it.isEven ? it * 2 : null),
-        [null, 4, null, 8],
-      );
-    });
-
     test('.mapIndexedNotNull()', () {
       expect([].mapIndexedNotNull((index, it) => 1), []);
       expect([1, 2, 3, 4].mapIndexedNotNull((index, it) => null), []);
