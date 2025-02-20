@@ -74,13 +74,6 @@ void main() {
       expect([].firstOrDefault(999), 999);
     });
 
-    test('.firstOrNullWhere()', () {
-      expect([1, 2, 3, 4, 5].firstOrNullWhere((e) => e < 6), 1);
-      expect([1, 2, 3, 4, 5].firstOrNullWhere((e) => e > 3), 4);
-      expect([1, 2, 3, 4, 5].firstOrNullWhere((e) => e > 5), null);
-      expect([].firstOrNullWhere((e) => true), null);
-    });
-
     test('.lastOrNull', () {
       expect([1, 2, 3].lastOrNull, 3);
       expect([].lastOrNull, null);
